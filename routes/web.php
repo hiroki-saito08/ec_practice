@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//コンポーネントの設定（auth.phpから流用し一部修正）
+use App\Http\Controllers\ComponentTestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +23,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+//コンポーネントの設定（auth.phpから流用し一部修正）
+Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
+Route::get('/component-test2', [ComponentTestController::class, 'showComponent2']);
 
 require __DIR__.'/auth.php';
