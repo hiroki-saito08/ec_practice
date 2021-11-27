@@ -52,7 +52,7 @@ return [
             // モデルファイルの関数を指定
         ],
 
-        'admins' => [
+        'admin' => [
             'driver' => 'session',
             'provider' => 'admin',
         ],
